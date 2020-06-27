@@ -8,57 +8,75 @@
 
 import UIKit
 import Firebase
-import GoogleSignIn
+import FirebaseAuth
+import FirebaseStorage
 
 class ProfileViewController: UIViewController {
     override func viewDidLoad() {
-          super.viewDidLoad()
+        super.viewDidLoad()
+        
+        loadDetails()
         
     }
-
+    //MARK:-
     @IBOutlet weak var profileImage: UIImageView!
-    @IBOutlet weak var emailTextField: UITextField!
-    @IBOutlet weak var name: UITextField!
+    @IBOutlet weak var emailLabel: UILabel!
     
-    @IBAction func updatePressed(_ sender: Any) {
-//        let user = Auth.auth().currentUser
-//        if let user = user {
-//
-//          let uid = user.uid
-//          let email = user.email
-//          let photoURL = user.photoURL
-//          var multiFactorString = "MultiFactor: "
-//          for info in user.multiFactor.enrolledFactors {
-//            multiFactorString += info.displayName ?? "[DispayName]"
-//            multiFactorString += " "
-//          }
-//          // ...
-            do {
-                  try Auth.auth().signOut()
-                    
-                    navigationController?.popToRootViewController(animated: true)
-                    
-                } catch let signOutError as NSError {
-                  print ("Error signing out: %@", signOutError)
-                }
-                  
-            }
+    //MARK:-LOG OUT PROCESS
+    @IBAction func logOutPressed(_ sender: UIButton) {
         
+        sender.pulsate()
+        let alertController = UIAlertController(title: nil, message: "Are you sure you want to Log Out", preferredStyle: .alert)
+        alertController.addAction(UIAlertAction(title: "Log Out", style: .default, handler:{(_) in
+            self.logOut()
+        }))
+        alertController.addAction(UIAlertAction(title: "Cancel", style:.cancel , handler: nil))
+        present(alertController, animated: true,completion: nil)
+        
+        
+    }
+    func logOut(){
+        do {
+            try Auth.auth().signOut()
+            
+            navigationController?.popToRootViewController(animated: true)
+            
+        } catch let signOutError as NSError {
+            print ("Error signing out: %@", signOutError)
+        }
+    }
+    //MARK:-RETRIEVING INFO FROM DATABASE
+    let db = Firestore.firestore()
+    func loadDetails(){
+        
+        db.collection("users").addSnapshotListener{ (querySnapshot, error) in
+            
+            
+            if let e = error{
+                print("There was an error retrieving data from the firestore. \(e)")
+            } else {
+                if let snapshotDocuments = querySnapshot?.documents {
+                    for doc in snapshotDocuments {
+                        let data = doc.data()
+                        if let email = data["email"] as? String,
+                            let uid = data["uid"] as? String{
+                            self.emailLabel.text = email
+                            
+                        }
+                        
+                    }
+                }
+            }
+        }
+    }
     
-    
-  
     
 }
-    
 
-    /*
-    // MARK: - Navigation
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
+
+
+
+
 
 

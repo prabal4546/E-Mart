@@ -12,5 +12,8 @@ target 'Task1' do
   pod 'Firebase/Firestore'
   pod 'Firebase/Core'
   pod 'GoogleSignIn'
+  pod 'KeychainAccess'
+  pod 'Firebase/Storage'
+  pod 'Firebase/Database'
 
 end
