@@ -10,6 +10,7 @@
 		894F99A65F672A342AFF378B /* Pods_Task1.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B8E2B824C1F1C9E1AA3401F6 /* Pods_Task1.framework */; };
 		911FC9DE24B20B1500CDA462 /* AnimationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 911FC9DD24B20B1500CDA462 /* AnimationManager.swift */; };
 		911FC9E424B3557C00CDA462 /* KeychainManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 911FC9E324B3557C00CDA462 /* KeychainManager.swift */; };
+		911FC9E624B3651B00CDA462 /* KeyframeAnimationsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 911FC9E524B3651B00CDA462 /* KeyframeAnimationsViewController.swift */; };
 		9127EFAD2472597700D3F0C8 /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9127EFAC2472597700D3F0C8 /* Utilities.swift */; };
 		912DE99524A2380A00273D08 /* UIButtonExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 912DE99424A2380A00273D08 /* UIButtonExtensions.swift */; };
 		912DE99724A32B9200273D08 /* ProductViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 912DE99624A32B9200273D08 /* ProductViewCell.swift */; };
@@ -39,6 +40,7 @@
 		3FAFA47BCBFE2B34CBE4959D /* Pods-Task1.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Task1.debug.xcconfig"; path = "Target Support Files/Pods-Task1/Pods-Task1.debug.xcconfig"; sourceTree = "<group>"; };
 		911FC9DD24B20B1500CDA462 /* AnimationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimationManager.swift; sourceTree = "<group>"; };
 		911FC9E324B3557C00CDA462 /* KeychainManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainManager.swift; sourceTree = "<group>"; };
+		911FC9E524B3651B00CDA462 /* KeyframeAnimationsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyframeAnimationsViewController.swift; sourceTree = "<group>"; };
 		9127EFAC2472597700D3F0C8 /* Utilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utilities.swift; sourceTree = "<group>"; };
 		912DE99424A2380A00273D08 /* UIButtonExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIButtonExtensions.swift; sourceTree = "<group>"; };
 		912DE99624A32B9200273D08 /* ProductViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductViewCell.swift; sourceTree = "<group>"; };
@@ -196,6 +198,7 @@
 				911FC9E124B20E4300CDA462 /* Profile */,
 				911FC9E024B20DDD00CDA462 /* Shop */,
 				911FC9DF24B20D8100CDA462 /* Auth */,
+				911FC9E524B3651B00CDA462 /* KeyframeAnimationsViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -347,6 +350,7 @@
 				91EAEC9B24696B1F00B995E3 /* ViewController.swift in Sources */,
 				91EAEC9724696B1F00B995E3 /* AppDelegate.swift in Sources */,
 				91EAEC9924696B1F00B995E3 /* SceneDelegate.swift in Sources */,
+				911FC9E624B3651B00CDA462 /* KeyframeAnimationsViewController.swift in Sources */,
 				912DE99B24A331A900273D08 /* DataService.swift in Sources */,
 				911FC9E424B3557C00CDA462 /* KeychainManager.swift in Sources */,
 				91EAECB52469856B00B995E3 /* LogInViewController.swift in Sources */,

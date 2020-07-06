@@ -369,7 +369,7 @@
         <!--Info-->
         <scene sceneID="ezc-34-vxv">
             <objects>
-                <viewController id="plZ-86-vJo" sceneMemberID="viewController">
+                <viewController id="plZ-86-vJo" customClass="KeyframeAnimationsViewController" customModule="Task1" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="HM5-om-c3X">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="1000"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -383,13 +383,22 @@
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="About US..." translatesAutoresizingMaskIntoConstraints="NO" id="U4D-ZZ-ytO">
                                                 <rect key="frame" x="0.0" y="0.0" width="414" height="820"/>
                                             </imageView>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="1200px-SNice.svg" translatesAutoresizingMaskIntoConstraints="NO" id="cyh-7v-JId">
+                                                <rect key="frame" x="160" y="763" width="105" height="57"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="105" id="g6a-Zo-KI1"/>
+                                                    <constraint firstAttribute="height" constant="57" id="huG-34-Vy7"/>
+                                                </constraints>
+                                            </imageView>
                                         </subviews>
                                         <color key="backgroundColor" name="BrandLightBlue"/>
                                         <constraints>
+                                            <constraint firstAttribute="bottom" secondItem="cyh-7v-JId" secondAttribute="bottom" id="4ZY-6n-gzK"/>
                                             <constraint firstItem="U4D-ZZ-ytO" firstAttribute="leading" secondItem="PWl-Hg-Sdc" secondAttribute="leading" id="EFq-Pd-utL"/>
                                             <constraint firstItem="U4D-ZZ-ytO" firstAttribute="top" secondItem="PWl-Hg-Sdc" secondAttribute="top" id="J54-QR-bMf"/>
                                             <constraint firstAttribute="bottom" secondItem="U4D-ZZ-ytO" secondAttribute="bottom" id="MSi-pC-OAO"/>
                                             <constraint firstAttribute="trailing" secondItem="U4D-ZZ-ytO" secondAttribute="trailing" id="Vas-vq-Dyh"/>
+                                            <constraint firstItem="cyh-7v-JId" firstAttribute="leading" secondItem="PWl-Hg-Sdc" secondAttribute="leading" constant="160" id="ZtF-uS-Z4F"/>
                                         </constraints>
                                     </view>
                                 </subviews>
@@ -419,6 +428,9 @@
                     </view>
                     <tabBarItem key="tabBarItem" title="Info" selectedImage="doc.text" catalog="system" id="Nt9-Jf-Dut"/>
                     <size key="freeformSize" width="414" height="1000"/>
+                    <connections>
+                        <outlet property="animationTarget" destination="cyh-7v-JId" id="1KQ-4c-OwZ"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qbR-0e-gQG" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -659,6 +671,7 @@
         <segue reference="hEw-S4-Vsk"/>
     </inferredMetricsTieBreakers>
     <resources>
+        <image name="1200px-SNice.svg" width="1200" height="1200"/>
         <image name="About US..." width="410" height="820"/>
         <image name="Screenshot 2020-06-26 at 11.39.44 AM" width="373" height="85"/>
         <image name="digital" width="1024" height="703"/>
