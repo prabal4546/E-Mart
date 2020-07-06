@@ -21,6 +21,7 @@ class ProfileViewController: UIViewController {
     //MARK:-
     @IBOutlet weak var profileImage: UIImageView!
     @IBOutlet weak var emailLabel: UILabel!
+    @IBOutlet weak var logOutButtonLabel: UIButton!
     
     //MARK:-LOG OUT PROCESS
     @IBAction func logOutPressed(_ sender: UIButton) {

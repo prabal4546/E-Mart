@@ -13,10 +13,14 @@ import LocalAuthentication
 class ViewController: UIViewController {
     
     @IBOutlet weak var titleLabel: UILabel!
+    @IBOutlet weak var imageView: UIImageView!
+    
     
     override func viewDidLoad() {
  //       authenticateUserAndConfigureView()
         super.viewDidLoad()
+        imageView.alpha = 0
+
         // Animation for Welcome Text
         titleLabel.text = " "
         var charIndex = 0.0
@@ -33,6 +37,9 @@ class ViewController: UIViewController {
 }
 
 }
+    override func viewDidAppear(_ animated: Bool) {
+        animateImage()
+    }
     
     
 //MARK:-
@@ -73,6 +80,15 @@ class ViewController: UIViewController {
             }
         }
 
+    }
+    
+    func animateImage(){
+        UIView.animate(withDuration: 1.5, delay: 0.75, options: [.transitionCurlUp], animations: {
+            self.imageView.alpha = 1
+            self.imageView.transform = CGAffineTransform(scaleX: 1.2, y: 1.2)
+        }) { (completed) in
+            
+        }
     }
 
 }

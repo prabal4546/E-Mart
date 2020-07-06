@@ -21,6 +21,20 @@ class LogInViewController: UIViewController,UITextFieldDelegate {
         emailTextField.delegate = self
         passwordTextField.delegate = self
         authenticateUserConfiguration()
+        
+        loginButtonLabel.layer.cornerRadius = 30
+        loginButtonLabel.layer.borderWidth = 1
+        loginButtonLabel.layer.borderColor = UIColor.clear.cgColor
+        
+        emailTextField.layer.cornerRadius = 50
+        emailTextField.layer.borderWidth = 1
+        emailTextField.layer.borderColor = UIColor.clear.cgColor
+        
+        passwordTextField.layer.cornerRadius = 50
+        passwordTextField.layer.borderWidth = 1
+        passwordTextField.layer.borderColor = UIColor.clear.cgColor
+        
+        
     }
     let db = Firestore.firestore()
     //MARK:-Forgot Password
@@ -55,9 +69,12 @@ class LogInViewController: UIViewController,UITextFieldDelegate {
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
 
+    @IBOutlet weak var loginPageTitle: UILabel!
+    @IBOutlet weak var loginButtonLabel: UIButton!
     @IBAction func loginPressed(_ sender: UIButton) {
         
-        sender.pulsate()
+        sender.setUp()
+        sender.selectionAnimation()
         
         if let email = emailTextField.text , let password = passwordTextField.text{
             Auth.auth().signIn(withEmail: email, password: password) { authResult, error in
@@ -153,6 +170,42 @@ class LogInViewController: UIViewController,UITextFieldDelegate {
         
         
     }
+    
+    
+    
+    
+    
+    //MARK:-View Lifecycle
+       override func viewWillAppear(_ animated: Bool) {
+           loginPageTitle.alpha = 0
+           loginButtonLabel.isHidden = true
+           
+       }
+       
+       override func viewDidAppear(_ animated: Bool) {
+            animateTitleInWithSpring()
+           showLogInButton()
+          }
+       
+       func animateTitleInWithSpring(){
+           UIView.animate(withDuration: 2.0, delay: 0.25, usingSpringWithDamping: 0.2, initialSpringVelocity: 5, options: [], animations: {
+               self.loginPageTitle.alpha = 1
+               self.loginPageTitle.frame.origin.y += 50
+           }, completion: nil)
+       }
+       
+       func showLogInButton(){
+           UIView.transition(with: self.loginButtonLabel, duration: 1.0, options: [.transitionFlipFromTop], animations: {
+               self.loginButtonLabel.isHidden = false
+           }, completion: nil)
+       }
+    
+    
+    
+    
+    
+    
+    
     
 }
 

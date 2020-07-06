@@ -79,6 +79,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="Ola-iT-fPY"/>
                     <connections>
+                        <outlet property="imageView" destination="HWj-jQ-8q5" id="Jyy-mR-2TN"/>
                         <outlet property="titleLabel" destination="oNA-3T-P0V" id="lkU-tY-jJp"/>
                     </connections>
                 </viewController>
@@ -145,7 +146,7 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="H7W-aW-5Dl">
                                 <rect key="frame" x="60" y="528" width="294" height="34"/>
                                 <color key="backgroundColor" red="0.83741801979999997" green="0.83743780850000005" blue="0.83742713930000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <state key="normal" title="Biometric "/>
+                                <state key="normal" title="Use Keychain"/>
                                 <connections>
                                     <action selector="touchID:" destination="Dmv-mE-qd6" eventType="touchUpInside" id="XAg-HJ-Oyp"/>
                                 </connections>
@@ -154,6 +155,7 @@
                         <color key="backgroundColor" name="BrandLightBlue"/>
                         <constraints>
                             <constraint firstItem="wUa-hH-KMS" firstAttribute="top" secondItem="XIu-HF-2v4" secondAttribute="top" constant="20" id="97L-qb-ePy"/>
+                            <constraint firstItem="H7W-aW-5Dl" firstAttribute="top" secondItem="kZa-VI-R2O" secondAttribute="bottom" constant="87" id="ANz-Vl-ZYM"/>
                             <constraint firstItem="wUa-hH-KMS" firstAttribute="leading" secondItem="XIu-HF-2v4" secondAttribute="leading" constant="40" id="Hnj-1s-pgm"/>
                             <constraint firstItem="kZa-VI-R2O" firstAttribute="top" secondItem="wUa-hH-KMS" secondAttribute="bottom" constant="63" id="X3r-CO-Dfm"/>
                             <constraint firstItem="H7W-aW-5Dl" firstAttribute="leading" secondItem="XIu-HF-2v4" secondAttribute="leading" constant="60" id="dDV-dI-UKc"/>
@@ -168,6 +170,8 @@
                     <navigationItem key="navigationItem" title="E-Mart" id="AzV-mp-03I"/>
                     <connections>
                         <outlet property="emailTextField" destination="Fnm-o0-T3e" id="uet-6l-dkV"/>
+                        <outlet property="loginButtonLabel" destination="Lh5-Kj-XkF" id="Osn-Ed-L0c"/>
+                        <outlet property="loginPageTitle" destination="wUa-hH-KMS" id="pSM-ZK-tCw"/>
                         <outlet property="passwordTextField" destination="KYX-lP-HT7" id="qZB-fZ-leg"/>
                     </connections>
                 </viewController>
@@ -374,23 +378,18 @@
                                 <rect key="frame" x="0.0" y="88" width="414" height="829"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PWl-Hg-Sdc" userLabel="ContentView">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="829"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="820"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="About Us" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xeE-f8-2Jn">
-                                                <rect key="frame" x="15" y="10" width="384" height="50"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="height" constant="50" id="E68-ij-Qxh"/>
-                                                </constraints>
-                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="40"/>
-                                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="About US..." translatesAutoresizingMaskIntoConstraints="NO" id="U4D-ZZ-ytO">
+                                                <rect key="frame" x="0.0" y="0.0" width="414" height="820"/>
+                                            </imageView>
                                         </subviews>
                                         <color key="backgroundColor" name="BrandLightBlue"/>
                                         <constraints>
-                                            <constraint firstItem="xeE-f8-2Jn" firstAttribute="leading" secondItem="PWl-Hg-Sdc" secondAttribute="leading" constant="15" id="YBW-Dl-bh3"/>
-                                            <constraint firstItem="xeE-f8-2Jn" firstAttribute="top" secondItem="PWl-Hg-Sdc" secondAttribute="top" constant="10" id="p1p-ZJ-NHy"/>
-                                            <constraint firstAttribute="trailing" secondItem="xeE-f8-2Jn" secondAttribute="trailing" constant="15" id="zjr-Hp-fEx"/>
+                                            <constraint firstItem="U4D-ZZ-ytO" firstAttribute="leading" secondItem="PWl-Hg-Sdc" secondAttribute="leading" id="EFq-Pd-utL"/>
+                                            <constraint firstItem="U4D-ZZ-ytO" firstAttribute="top" secondItem="PWl-Hg-Sdc" secondAttribute="top" id="J54-QR-bMf"/>
+                                            <constraint firstAttribute="bottom" secondItem="U4D-ZZ-ytO" secondAttribute="bottom" id="MSi-pC-OAO"/>
+                                            <constraint firstAttribute="trailing" secondItem="U4D-ZZ-ytO" secondAttribute="trailing" id="Vas-vq-Dyh"/>
                                         </constraints>
                                     </view>
                                 </subviews>
@@ -411,17 +410,19 @@
                         <constraints>
                             <constraint firstItem="Fip-Jr-ohb" firstAttribute="bottom" secondItem="xkG-kJ-FlL" secondAttribute="bottom" id="1Ss-hj-gEx"/>
                             <constraint firstItem="xkG-kJ-FlL" firstAttribute="top" secondItem="Fip-Jr-ohb" secondAttribute="top" id="6op-Sk-See"/>
+                            <constraint firstItem="PWl-Hg-Sdc" firstAttribute="height" secondItem="HM5-om-c3X" secondAttribute="height" multiplier="0.829" priority="250" id="IgI-Ha-TVa"/>
+                            <constraint firstItem="PWl-Hg-Sdc" firstAttribute="width" secondItem="HM5-om-c3X" secondAttribute="width" id="ZZj-UA-OD1"/>
                             <constraint firstItem="xkG-kJ-FlL" firstAttribute="leading" secondItem="Fip-Jr-ohb" secondAttribute="leading" id="pwh-eO-N0m"/>
                             <constraint firstItem="Fip-Jr-ohb" firstAttribute="trailing" secondItem="xkG-kJ-FlL" secondAttribute="trailing" id="yoY-KT-lyd"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Fip-Jr-ohb"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Info" selectedImage="shield" catalog="system" id="Nt9-Jf-Dut"/>
+                    <tabBarItem key="tabBarItem" title="Info" selectedImage="doc.text" catalog="system" id="Nt9-Jf-Dut"/>
                     <size key="freeformSize" width="414" height="1000"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qbR-0e-gQG" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4055" y="1001"/>
+            <point key="canvasLocation" x="4053.6231884057975" y="1000.4464285714286"/>
         </scene>
         <!--Profile-->
         <scene sceneID="ZXz-zi-fRQ">
@@ -490,6 +491,7 @@
                     <tabBarItem key="tabBarItem" title="Profile" image="person.crop.circle" catalog="system" id="BAd-KJ-g0X"/>
                     <connections>
                         <outlet property="emailLabel" destination="co7-hz-PQ1" id="vFK-Aw-9gS"/>
+                        <outlet property="logOutButtonLabel" destination="QUT-k8-Tv5" id="H78-Gv-17C"/>
                         <outlet property="profileImage" destination="mXA-Z7-8Qv" id="WiH-56-acn"/>
                     </connections>
                 </viewController>
@@ -619,9 +621,11 @@
                     <connections>
                         <outlet property="emailTextField" destination="ZXp-92-2fA" id="oJE-lJ-bgB"/>
                         <outlet property="errorLabel" destination="eFS-X8-HTm" id="Ugf-AM-a9r"/>
+                        <outlet property="googleButton" destination="Jnw-xq-Azo" id="r6v-Fx-9LO"/>
                         <outlet property="passwordTextField" destination="Ddc-gS-sB8" id="8KO-hN-vqD"/>
                         <outlet property="profileImage" destination="ekE-Td-eae" id="ns7-qC-y2v"/>
                         <outlet property="signUpButton" destination="YVI-1z-WUZ" id="5X3-jx-f0w"/>
+                        <outlet property="signUpPageLabel" destination="pHG-SN-kWt" id="wwu-BD-18R"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0v1-KE-1t2" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -655,15 +659,16 @@
         <segue reference="hEw-S4-Vsk"/>
     </inferredMetricsTieBreakers>
     <resources>
+        <image name="About US..." width="410" height="820"/>
         <image name="Screenshot 2020-06-26 at 11.39.44 AM" width="373" height="85"/>
         <image name="digital" width="1024" height="703"/>
+        <image name="doc.text" catalog="system" width="115" height="128"/>
         <image name="person.circle" catalog="system" width="128" height="121"/>
         <image name="person.crop.circle" catalog="system" width="128" height="121"/>
         <image name="person.crop.circle.badge.plus" catalog="system" width="128" height="101"/>
         <image name="plus.rectangle.fill" catalog="system" width="128" height="93"/>
         <image name="purchase" width="512" height="512"/>
         <image name="rectangle.grid.1x2.fill" catalog="system" width="128" height="101"/>
-        <image name="shield" catalog="system" width="128" height="121"/>
         <image name="shirt01" width="500" height="500"/>
         <image name="text.badge.checkmark" catalog="system" width="128" height="109"/>
         <namedColor name="BrandBlue">

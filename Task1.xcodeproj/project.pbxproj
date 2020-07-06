@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		894F99A65F672A342AFF378B /* Pods_Task1.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B8E2B824C1F1C9E1AA3401F6 /* Pods_Task1.framework */; };
+		911FC9DE24B20B1500CDA462 /* AnimationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 911FC9DD24B20B1500CDA462 /* AnimationManager.swift */; };
+		911FC9E424B3557C00CDA462 /* KeychainManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 911FC9E324B3557C00CDA462 /* KeychainManager.swift */; };
 		9127EFAD2472597700D3F0C8 /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9127EFAC2472597700D3F0C8 /* Utilities.swift */; };
 		912DE99524A2380A00273D08 /* UIButtonExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 912DE99424A2380A00273D08 /* UIButtonExtensions.swift */; };
 		912DE99724A32B9200273D08 /* ProductViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 912DE99624A32B9200273D08 /* ProductViewCell.swift */; };
@@ -35,6 +37,8 @@
 /* Begin PBXFileReference section */
 		31A1345B9B1F112AF87C1BF3 /* Pods-Task1.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Task1.release.xcconfig"; path = "Target Support Files/Pods-Task1/Pods-Task1.release.xcconfig"; sourceTree = "<group>"; };
 		3FAFA47BCBFE2B34CBE4959D /* Pods-Task1.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Task1.debug.xcconfig"; path = "Target Support Files/Pods-Task1/Pods-Task1.debug.xcconfig"; sourceTree = "<group>"; };
+		911FC9DD24B20B1500CDA462 /* AnimationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimationManager.swift; sourceTree = "<group>"; };
+		911FC9E324B3557C00CDA462 /* KeychainManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainManager.swift; sourceTree = "<group>"; };
 		9127EFAC2472597700D3F0C8 /* Utilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utilities.swift; sourceTree = "<group>"; };
 		912DE99424A2380A00273D08 /* UIButtonExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIButtonExtensions.swift; sourceTree = "<group>"; };
 		912DE99624A32B9200273D08 /* ProductViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductViewCell.swift; sourceTree = "<group>"; };
@@ -91,15 +95,63 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
+		911FC9DC24B20AB200CDA462 /* Animation */ = {
+			isa = PBXGroup;
+			children = (
+				912DE99424A2380A00273D08 /* UIButtonExtensions.swift */,
+				9127EFAC2472597700D3F0C8 /* Utilities.swift */,
+				911FC9DD24B20B1500CDA462 /* AnimationManager.swift */,
+			);
+			path = Animation;
+			sourceTree = "<group>";
+		};
+		911FC9DF24B20D8100CDA462 /* Auth */ = {
+			isa = PBXGroup;
+			children = (
+				91EAEC9A24696B1F00B995E3 /* ViewController.swift */,
+				91EAECB22469855500B995E3 /* RegisterViewController.swift */,
+				91EAECB42469856B00B995E3 /* LogInViewController.swift */,
+			);
+			path = Auth;
+			sourceTree = "<group>";
+		};
+		911FC9E024B20DDD00CDA462 /* Shop */ = {
+			isa = PBXGroup;
+			children = (
+				912DE99624A32B9200273D08 /* ProductViewCell.swift */,
+				912DE99C24A3338300273D08 /* ProductsVC.swift */,
+				91F76B7524A4741300DC424A /* CategoryCell.swift */,
+				91F76B7724A4752F00DC424A /* CategoriesVC.swift */,
+			);
+			path = Shop;
+			sourceTree = "<group>";
+		};
+		911FC9E124B20E4300CDA462 /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				91EAECB6246985A000B995E3 /* HomeViewController.swift */,
+				91EAECDC246ABA0C00B995E3 /* ProfileViewController.swift */,
+			);
+			path = Profile;
+			sourceTree = "<group>";
+		};
+		911FC9E224B34F4400CDA462 /* Helper */ = {
+			isa = PBXGroup;
+			children = (
+				912DE99A24A331A900273D08 /* DataService.swift */,
+				912DE99824A3313400273D08 /* Product.swift */,
+				91F76B7324A3B62900DC424A /* Biometric.swift */,
+				91F76B7924A476A900DC424A /* Category.swift */,
+			);
+			path = Helper;
+			sourceTree = "<group>";
+		};
 		912DE99324A1DF9F00273D08 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				9127EFAC2472597700D3F0C8 /* Utilities.swift */,
-				912DE99424A2380A00273D08 /* UIButtonExtensions.swift */,
-				912DE99824A3313400273D08 /* Product.swift */,
-				912DE99A24A331A900273D08 /* DataService.swift */,
-				91F76B7324A3B62900DC424A /* Biometric.swift */,
-				91F76B7924A476A900DC424A /* Category.swift */,
+				911FC9E224B34F4400CDA462 /* Helper */,
+				911FC9DC24B20AB200CDA462 /* Animation */,
+				911FC9E324B3557C00CDA462 /* KeychainManager.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -141,15 +193,9 @@
 		91EAECB8246985B500B995E3 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				91EAEC9A24696B1F00B995E3 /* ViewController.swift */,
-				91EAECB22469855500B995E3 /* RegisterViewController.swift */,
-				91EAECB42469856B00B995E3 /* LogInViewController.swift */,
-				91EAECB6246985A000B995E3 /* HomeViewController.swift */,
-				91EAECDC246ABA0C00B995E3 /* ProfileViewController.swift */,
-				912DE99624A32B9200273D08 /* ProductViewCell.swift */,
-				912DE99C24A3338300273D08 /* ProductsVC.swift */,
-				91F76B7524A4741300DC424A /* CategoryCell.swift */,
-				91F76B7724A4752F00DC424A /* CategoriesVC.swift */,
+				911FC9E124B20E4300CDA462 /* Profile */,
+				911FC9E024B20DDD00CDA462 /* Shop */,
+				911FC9DF24B20D8100CDA462 /* Auth */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -302,8 +348,10 @@
 				91EAEC9724696B1F00B995E3 /* AppDelegate.swift in Sources */,
 				91EAEC9924696B1F00B995E3 /* SceneDelegate.swift in Sources */,
 				912DE99B24A331A900273D08 /* DataService.swift in Sources */,
+				911FC9E424B3557C00CDA462 /* KeychainManager.swift in Sources */,
 				91EAECB52469856B00B995E3 /* LogInViewController.swift in Sources */,
 				912DE99D24A3338300273D08 /* ProductsVC.swift in Sources */,
+				911FC9DE24B20B1500CDA462 /* AnimationManager.swift in Sources */,
 				91EAECDD246ABA0C00B995E3 /* ProfileViewController.swift in Sources */,
 				912DE99924A3313400273D08 /* Product.swift in Sources */,
 				91F76B7424A3B62900DC424A /* Biometric.swift in Sources */,

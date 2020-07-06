@@ -26,6 +26,27 @@ class RegisterViewController: UIViewController,GIDSignInDelegate {
                profileImage.isUserInteractionEnabled = true
                profileImage.addGestureRecognizer(tapGesture)
         
+        //outlet tweaks
+        signUpButton.layer.cornerRadius = 15
+        signUpButton.layer.borderWidth = 1
+        signUpButton.layer.borderColor = UIColor.clear.cgColor
+        
+        emailTextField.layer.cornerRadius = 15
+        emailTextField.layer.borderWidth = 1
+        emailTextField.layer.borderColor = UIColor.clear.cgColor
+        
+        passwordTextField.layer.cornerRadius = 15
+        passwordTextField.layer.borderWidth = 1
+        passwordTextField.layer.borderColor = UIColor.clear.cgColor
+        
+        googleButton.layer.cornerRadius = 30
+        googleButton.layer.borderWidth = 1
+        googleButton.layer.borderColor = UIColor.clear.cgColor
+        
+        
+        
+    
+        
     }
     
     //MARK:-Outlets
@@ -35,6 +56,10 @@ class RegisterViewController: UIViewController,GIDSignInDelegate {
     
     @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet weak var emailTextField: UITextField!
+    
+    @IBOutlet weak var signUpPageLabel: UILabel!
+    
+    @IBOutlet weak var googleButton: UIButton!
     
     //MARK:-
     func setUpElements(){
@@ -88,7 +113,8 @@ class RegisterViewController: UIViewController,GIDSignInDelegate {
     //MARK:- New User
     @IBAction func registerPressed(_ sender: UIButton) {
         
-        sender.pulsate()
+        sender.setUp()
+        sender.selectionAnimation()
       
         let error = validateFields()
         
@@ -150,7 +176,8 @@ class RegisterViewController: UIViewController,GIDSignInDelegate {
     //MARK:-Google Sign In
     @IBAction func googlePressed(_ sender: UIButton) {
         
-        sender.pulsate()
+        sender.setUp()
+        sender.selectionAnimation()
         
         GIDSignIn.sharedInstance().signIn()
     }
@@ -208,5 +235,35 @@ func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMe
     profileImage.image = image
     self.dismiss(animated: true, completion: nil)
 }
+    
+    
+    //MARK:-View Lifecycle
+    override func viewWillAppear(_ animated: Bool) {
+        signUpPageLabel.alpha = 0
+        signUpButton.isHidden = true
+        googleButton.isHidden = true
+        
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+           animateTitleInWithSpring()
+        showSignUpButton()
+       }
+    
+    func animateTitleInWithSpring(){
+        UIView.animate(withDuration: 2.0, delay: 0.25, usingSpringWithDamping: 0.2, initialSpringVelocity: 5, options: [], animations: {
+            self.signUpPageLabel.alpha = 1
+            self.signUpPageLabel.frame.origin.y += 50
+        }, completion: nil)
+    }
+    
+    func showSignUpButton(){
+        UIView.transition(with: self.signUpButton, duration: 1.0, options: [.transitionFlipFromTop], animations: {
+            self.signUpButton.isHidden = false
+            self.googleButton.isHidden = false
+        }, completion: nil)
+    }
+
+    
 
 }
