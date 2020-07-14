@@ -12,13 +12,19 @@ import LocalAuthentication
 
 class ViewController: UIViewController {
     
+    var context = LAContext()
+    
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var imageView: UIImageView!
     
-    
+    //MARK:-
     override func viewDidLoad() {
  //       authenticateUserAndConfigureView()
         super.viewDidLoad()
+        context.localizedCancelTitle = "End Session"
+        context.localizedFallbackTitle = "Use Passcode"
+        context.localizedReason = "App needs user authentication"
+        evaluatePolicy()
         imageView.alpha = 0
 
         // Animation for Welcome Text
@@ -88,6 +94,32 @@ class ViewController: UIViewController {
             self.imageView.transform = CGAffineTransform(scaleX: 1.2, y: 1.2)
         }) { (completed) in
             
+        }
+    }
+    //MARK:- Biometric
+    func evaluatePolicy(){
+        
+        var errorCanEval:NSError?
+        if context.canEvaluatePolicy(.deviceOwnerAuthenticationWithBiometrics, error: &errorCanEval){
+            
+            context.evaluatePolicy(.deviceOwnerAuthenticationWithBiometrics, localizedReason: "Fallback Title- override reason") { (success, error) in
+                print(success)
+                if let err = error{
+                    let evalErrorCode = LAError(_nsError: err as NSError)
+                    switch evalErrorCode.code{
+                    case LAError.Code.userCancel:
+                        print("user cacelled")
+                    case LAError.Code.userFallback:
+                        print("fallback")
+                    default:
+                        print("other error")
+                    }
+                }
+            }
+            
+        }else{
+            print("can't evaluate")
+            print(errorCanEval?.localizedDescription ?? "no error desc")
         }
     }
 

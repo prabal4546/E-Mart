@@ -330,6 +330,7 @@
                                                 <constraint firstItem="Ng6-48-dz8" firstAttribute="top" secondItem="kWV-sx-gtd" secondAttribute="bottom" constant="35" id="ROK-Fc-KVg"/>
                                                 <constraint firstItem="kWV-sx-gtd" firstAttribute="leading" secondItem="8s7-RG-YWl" secondAttribute="leading" constant="8" id="cao-gt-WfR"/>
                                                 <constraint firstItem="Ng6-48-dz8" firstAttribute="leading" secondItem="8s7-RG-YWl" secondAttribute="leading" constant="8" id="gnt-xu-jM9"/>
+                                                <constraint firstAttribute="bottom" secondItem="xxW-LK-eRJ" secondAttribute="bottom" constant="28" id="kL9-Ec-Cfh"/>
                                                 <constraint firstAttribute="trailing" secondItem="kWV-sx-gtd" secondAttribute="trailing" constant="8" id="pOP-Cp-C2X"/>
                                                 <constraint firstItem="xxW-LK-eRJ" firstAttribute="leading" secondItem="8s7-RG-YWl" secondAttribute="leading" constant="8" id="u1g-t5-jOk"/>
                                             </constraints>
