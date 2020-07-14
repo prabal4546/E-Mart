@@ -140,6 +140,22 @@ class RegisterViewController: UIViewController,GIDSignInDelegate {
                     // User created successfully
                     let db = Firestore.firestore()
                     
+                    //saving image trial
+                    let storageRef = Storage.storage().reference().child("myImage.png")
+                    
+                    if let uploadData = self.profileImage.image?.pngData(){
+                    storageRef.putData(uploadData, metadata: nil) { (metadata, error) in
+                        if error != nil{
+                            print(error)
+                            return
+                        }
+                        print(metadata)
+                        }
+                        
+                    }
+                    
+                    
+                    //mark
                     db.collection("users").addDocument(data: ["email":email, "password": password, "uid": result!.user.uid]) { (error) in
                         if error != nil{
                             self.showError("Error saving user data")
@@ -225,15 +241,28 @@ func setupImagePicker(){
         imagePicker.sourceType = .savedPhotosAlbum
         imagePicker.isEditing = true
         imagePicker.delegate = self
+        imagePicker.allowsEditing = true
      
          self.present(imagePicker, animated: true, completion: nil)
     }
 }
 
 func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
-    let image = info[UIImagePickerController.InfoKey.originalImage] as! UIImage
-    profileImage.image = image
-    self.dismiss(animated: true, completion: nil)
+    
+    var selectedImageFromPicker:UIImage?
+    
+    if let editedImage = info[UIImagePickerController.InfoKey.editedImage] as? UIImage{
+        selectedImageFromPicker = editedImage
+    }
+    
+    else if let image = info[UIImagePickerController.InfoKey.originalImage] as? UIImage{
+        selectedImageFromPicker = image
+        
+    }
+    if let selectedImage = selectedImageFromPicker{
+        profileImage.image = selectedImage
+    }
+    dismiss(animated: true, completion: nil)
 }
     
     

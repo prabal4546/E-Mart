@@ -7,6 +7,7 @@
 //
 
 import Foundation
+
 class DataService {
     static let instance = DataService()
     
@@ -25,17 +26,17 @@ class DataService {
     ]
     
     private let hoodies = [
-        Product(title: "Devslopes Logo Hoodie Grey", price: "$32", imageName: "hoodie01.png"),
-        Product(title: "Devslopes Logo Hoodie Red", price: "$32", imageName: "hoodie02.png"),
-        Product(title: "Devslopes Hoodie Grey", price: "$32", imageName: "hoodie03.png"),
-        Product(title: "Devslopes Hoodie Black", price: "$32", imageName: "hoodie04.png"),
+        Product(title: "MKBHD Logo Hoodie Grey", price: "$32", imageName: "hoodie01.png"),
+        Product(title: "Devslope Logo Hoodie Red", price: "$32", imageName: "hoodie02.png"),
+        Product(title: "MKBHD Hoodie Grey", price: "$32", imageName: "hoodie03.png"),
+        Product(title: "MKBHD Hoodie Black", price: "$32", imageName: "hoodie04.png"),
         
     ]
     
     private let shirts = [
-        Product(title: "Devslopes Logo Shirt Black", price: "$18", imageName: "shirt01.png"),
-        Product(title: "Devslopes Badge Shirt Light Grey", price: "$19", imageName: "shirt02.png"),
-        Product(title: "Devslopes Logo Shirt Red", price: "$18", imageName: "shirt03.png"),
+        Product(title: "MKBHD Logo Shirt Black", price: "$18", imageName: "shirt01.png"),
+        Product(title: "MKBHD Badge Shirt Light Grey", price: "$19", imageName: "shirt02.png"),
+        Product(title: "MKBHD Logo Shirt Red", price: "$18", imageName: "shirt03.png"),
         Product(title: "Hustle Delegate Grey", price: "$18", imageName: "shirt04.png"),
         Product(title: "Kickflip Studios Black", price: "$18", imageName: "shirt05.png")
     ]

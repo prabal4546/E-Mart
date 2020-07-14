@@ -559,6 +559,9 @@
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YVI-1z-WUZ">
                                         <rect key="frame" x="0.0" y="108" width="334" height="36"/>
                                         <color key="backgroundColor" name="BrandBlue"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="36" id="Eel-pa-afF"/>
+                                        </constraints>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
                                         <color key="tintColor" name="BrandLightBlue"/>
                                         <state key="normal" title="Register"/>
@@ -619,6 +622,7 @@
                             <constraint firstItem="oJm-CZ-bgS" firstAttribute="trailing" secondItem="Jnw-xq-Azo" secondAttribute="trailing" constant="40" id="ceM-QP-q5S"/>
                             <constraint firstItem="oJm-CZ-bgS" firstAttribute="trailing" secondItem="eFS-X8-HTm" secondAttribute="trailing" constant="40" id="e1V-7a-Ycz"/>
                             <constraint firstItem="ekE-Td-eae" firstAttribute="top" secondItem="oJm-CZ-bgS" secondAttribute="top" constant="11" id="iC1-4J-dvo"/>
+                            <constraint firstItem="oJm-CZ-bgS" firstAttribute="bottom" secondItem="eFS-X8-HTm" secondAttribute="bottom" constant="138" id="iyB-BK-Sw0"/>
                             <constraint firstItem="0vX-yJ-4WH" firstAttribute="top" secondItem="pHG-SN-kWt" secondAttribute="bottom" constant="63" id="mCf-0K-G3z"/>
                             <constraint firstItem="0vX-yJ-4WH" firstAttribute="leading" secondItem="oJm-CZ-bgS" secondAttribute="leading" constant="40" id="n6L-IM-bz3"/>
                             <constraint firstItem="oJm-CZ-bgS" firstAttribute="trailing" secondItem="Bh5-4P-KVP" secondAttribute="trailing" constant="80" id="nPu-ai-7wb"/>
@@ -669,7 +673,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="hEw-S4-Vsk"/>
+        <segue reference="xRg-sd-xXz"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="1200px-SNice.svg" width="1200" height="1200"/>
