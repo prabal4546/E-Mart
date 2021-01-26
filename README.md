@@ -43,3 +43,9 @@ To run this project, install these pods:
 * Shop by Category
 * Biometric Authentication
 * Keychain 
+
+## License
+
+Copyright (c) 2021 E-Mart
+
+Licensed under MIT License: https://opensource.org/licenses/MIT
