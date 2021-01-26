@@ -9,7 +9,6 @@ E-mart is a shopping app.
 <p align = "left"><img src = "Assets/Simulator Screen Shot - iPhone 11 - 2021-01-26 at 16.34.34_iphone12prographite_portrait.png" width = "20%" height = "20%">
 <img src = "Assets/Simulator Screen Shot - iPhone 11 - 2021-01-26 at 16.35.19_iphone12prographite_portrait.png" width = "20%" height = "20%">
 <img src = "Assets/Simulator Screen Shot - iPhone 11 - 2021-01-26 at 16.35.29_iphone12prographite_portrait.png" width = "20%" height = "20%">
-<img src = "Assets/Simulator Screen Shot - iPhone 11 - 2021-01-26 at 16.35.34_iphone12prographite_portrait.png" width = "20%" height = "20%">
 <img src = "Assets/Simulator Screen Shot - iPhone 11 - 2021-01-26 at 16.35.43_iphone12prographite_portrait.png" width = "20%" height = "20%">
 <img src = "Assets/Simulator Screen Shot - iPhone 11 - 2021-01-26 at 16.36.01_iphone12prographite_portrait.png" width = "20%" height = "20%">
 <img src = "Assets/Simulator Screen Shot - iPhone 11 - 2021-01-26 at 16.36.04_iphone12prographite_portrait.png" width = "20%" height = "20%">
