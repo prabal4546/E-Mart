@@ -1,4 +1,4 @@
-# E-Mart
+# 🛒&nbsp; E-Mart
 ## Table of contents
 * [General info](#general-info)
 * [Technologies](#technologies)
