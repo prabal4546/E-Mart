@@ -31,7 +31,7 @@ Project is created with:
 	
 ## Setup
 
-To run this project, install these pods:
+To run this project, install these pods using **pod install**:
 
 ```
   pod 'Firebase/Auth'
